@@ -1,111 +1,182 @@
-# 🚺 Women Safety Analysis using Clustering  
+# 🚺 Women Safety Analysis using Clustering
 
----
+## 📌 Overview
 
-## 📌 Overview  
-
-This project analyzes women's safety in public spaces using survey data and unsupervised machine learning techniques. It identifies patterns in safety perception and infrastructure, grouping locations into clusters such as:
+This project analyzes women's safety in public spaces using survey data and unsupervised machine learning techniques. The primary objective is to identify patterns in safety perception and infrastructure, and group public places into meaningful clusters such as:
 
 - ✔ Safe  
 - ✔ Moderately Safe  
 - ✔ Unsafe  
 
----
-
-## 🎯 Objectives  
-
-- Analyze safety conditions across public places  
-- Combine infrastructure and perception-based features  
-- Apply clustering algorithms to detect patterns  
-- Provide insights for urban safety improvements  
+The project follows a structured pipeline including data preprocessing, feature engineering, clustering, visualization, and interpretation, along with ethical considerations.
 
 ---
 
+## 📂 Repository Structure
 
-## 📊 Dataset  
-
-- Collected via **Google Forms**  
-- Approximately **550 responses**  
-- Mix of:
-  - **Objective data** (infrastructure)  
-  - **Subjective data** (perception)  
-
----
-
-## 🔑 Features  
-
-| Feature | Type |
-|--------|------|
-| Type_of_Public_Place | Nominal |
-| Mode_of_Transport | Nominal |
-| Crowd_Level | Ordinal |
-| Lighting_Condition | Ordinal |
-| CCTV_Available | Binary |
-| Security_in_Public_Place | Binary |
-| Safe_Visiting_Alone | Binary |
-| Avoid_Going_Out_At_Night | Binary |
-| Experienced_Harassment | Binary |
+```
+usl-project/
+ ┣ notebooks/
+ ┃ ┣ 01_data_preprocessing.ipynb
+ ┃ ┣ 02_feature_engineering.ipynb
+ ┃ ┣ 03_unsupervised_clustering.ipynb
+ ┃ ┣ 04_data_visualization.ipynb
+ ┃ ┗ 05_interpretation.ipynb
+ ┣ data/
+ ┃ ┣ Women_public_place_safety.csv
+ ┃ ┣ processed_data.csv
+ ┃ ┣ feature_data.csv
+ ┃ ┗ clustered_data.csv
+ ┣ presentation/
+ ┃ ┗ project_presentation.pptx
+ ┣ requirements.txt
+ ┗ README.md
+```
 
 ---
 
-## ⚙️ Methodology  
+## ⚙️ Execution Instructions
 
-### 🔹 Data Processing  
-- Data Cleaning (handling missing values, standardization)  
-- Data Preprocessing (encoding categorical variables)  
+Run the notebooks in the following sequence:
 
-### 🔹 Feature Engineering  
+1. `01_data_preprocessing.ipynb`  
+2. `02_feature_engineering.ipynb`  
+3. `03_unsupervised_clustering.ipynb`  
+4. `04_data_visualization.ipynb`  
+5. `05_interpretation.ipynb`  
+
+Each notebook generates output files that are used as inputs for the next step.
+
+---
+
+## 📊 Dataset
+
+- Collected via **Google Forms**
+- Contains approximately **550 responses**
+- Includes:
+  - **Objective data** (infrastructure-related features)
+  - **Subjective data** (perception of safety)
+
+---
+
+## 🔑 Features
+
+| Feature                  | Type    |
+|--------------------------|--------|
+| Type_of_Public_Place     | Nominal |
+| Mode_of_Transport        | Nominal |
+| Crowd_Level              | Ordinal |
+| Lighting_Condition       | Ordinal |
+| CCTV_Available           | Binary  |
+| Security_in_Public_Place | Binary  |
+| Safe_Visiting_Alone      | Binary  |
+| Avoid_Going_Out_At_Night | Binary  |
+| Experienced_Harassment   | Binary  |
+
+---
+
+## ⚙️ Methodology
+
+### 🔹 Data Processing
+- Handling missing values  
+- Standardizing inconsistent entries  
+- Encoding categorical variables  
+
+### 🔹 Feature Engineering
 - Infrastructure Score  
 - Perception Score  
 - Safety Score  
 
-### 🔹 Model Pipeline  
-- Outlier Removal (IQR Method)  
-- Data Aggregation (place-wise averaging)  
-- Feature Scaling (StandardScaler)  
+### 🔹 Model Pipeline
+- Aggregation of data (place-wise averaging)  
+- Feature scaling using `StandardScaler`  
 
-### 🔹 Clustering Algorithms  
+### 🔹 Clustering Algorithms
 - K-Means Clustering  
 - Hierarchical Clustering  
   - Ward Linkage  
   - Average Linkage  
 
-### 🔹 Ensemble Learning  
+### 🔹 Ensemble Approach
 - Majority voting across clustering methods  
 
-### 🔹 Evaluation  
-- Silhouette Score  
+### 🔹 Evaluation
+- Silhouette Score for cluster validation  
 
 ---
 
-## 📈 Visualizations  
+## 📈 Visualizations
 
-- 📍 Scatter Plots (Cluster visualization)  
-- 🌳 Dendrograms (Hierarchical clustering)  
-- 🔥 Heatmaps (Safety comparison)  
-- 📊 Bar Charts (Safety scores)  
-
----
-
-## 🧠 Results  
-
-- Successfully identified distinct safety clusters  
-- Highlighted differences between infrastructure vs perception  
-- Revealed areas needing improvement in safety measures  
+- 📍 Scatter plots for cluster visualization  
+- 🌳 Dendrograms for hierarchical clustering  
+- 📊 Bar charts for comparing safety scores  
 
 ---
 
-## 💡 Applications  
+## 🧠 Results & Insights
 
-- Urban Planning  
-- Public Safety Policy  
-- Smart City Development  
-- Awareness & Decision Making  
+- Clear clustering of public places based on safety levels  
+- Both infrastructure and perception significantly influence safety  
+- Identifies mismatches between available facilities and perceived safety  
+- Highlights areas that require improvement  
 
 ---
 
-## 🚀 Future Scope  
+## ⚖️ Ethical Considerations
 
-- Add demographic & location-based features  
-- Use advanced ML models  
-- Expand dataset size  
+- Survey responses may include subjective bias  
+- Privacy and anonymity of participants are maintained  
+- Results should not be used to label or stigmatize locations without context  
+- Intended to support safer urban planning and awareness  
+
+---
+
+## 🛠️ Requirements
+
+- Python 3.x  
+- Jupyter Notebook  
+
+### 📦 Libraries
+
+- pandas  
+- numpy  
+- matplotlib  
+- seaborn  
+- scikit-learn  
+
+Install dependencies:
+
+```
+pip install -r requirements.txt
+```
+
+---
+
+## 📽️ Presentation
+
+The project includes a PowerPoint presentation covering:
+
+- Problem statement  
+- Dataset overview  
+- Methodology  
+- Results and insights  
+- Ethical considerations  
+- Demonstration  
+
+---
+
+## 🚀 Future Scope
+
+- Incorporate demographic and geographic features  
+- Increase dataset size for better generalization  
+- Apply advanced ML/AI models  
+- Develop real-time safety prediction systems  
+
+---
+
+## 👨‍💻 Team Members
+
+- **Pratyasha Palit**
+- **Mitali Swaroop**
+- **Garima Sablok**
+- **Vaishnavi Singh**
