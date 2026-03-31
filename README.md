@@ -28,7 +28,8 @@ usl-project/
  ┃ ┣ feature_data.csv
  ┃ ┗ clustered_data.csv
  ┣ presentation/
- ┃ ┗ project_presentation.pptx
+ ┃ ┣ Women_public _space_safety(short).pptx
+ ┃ ┣ Women_public_space_safety(detailed).pptx
  ┣ requirements.txt
  ┗ README.md
 ```
