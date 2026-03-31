@@ -50,6 +50,27 @@ Each notebook generates output files that are used as inputs for the next step.
 
 ---
 
+## 🚀 How to Run
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/Coder-Pratyasha/Women-Public-Space-Safety-Analysis.git
+cd Women-Public-Space-Safety-Analysis
+```
+
+### 2. Install dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Launch Jupyter
+```bash
+jupyter notebook
+```
+
+### 4. Run the notebooks in the mentioned order
+
 ## 📊 Dataset
 
 - Collected via **Google Forms**
